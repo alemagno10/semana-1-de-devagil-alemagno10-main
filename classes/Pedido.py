@@ -14,3 +14,11 @@ import re
 class Pedido:
     EM_ABERTO = 1
     PAGO = 2
+
+    def __init__(self,pessoa,carrinho):
+        self.pessoa = pessoa
+        self.carrinho = carrinho
+    
+    def detalhes(self):
+        return f'Nome: {self.pessoa.nome}. Endereços: {list(self.pessoa.listar_enderecos().keys())}. Produtos: {self.carrinho.itens()}'
+    

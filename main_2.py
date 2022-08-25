@@ -31,11 +31,11 @@ print(end2)
 # Adiciona endereço à pessoa
 pessoa1.adicionar_endereco('casa', end1)
 
-print("Endereços da pessoa")
+print("\nEndereços da pessoa")
 print(pessoa1.listar_enderecos())
 
 pessoa1.adicionar_endereco('trabalho', end2)
-print("Endereços da pessoa após inclusão")
+print("\nEndereços da pessoa após inclusão")
 print(pessoa1.listar_enderecos())
 
 # Criando um produto
@@ -55,7 +55,7 @@ pag.processa_pagamento()
 if pag.pagamento_aprovado:
     pedido.status = Pedido.PAGO 
 
-print("Pedido aguardando coleta")
+print("\nPedido aguardando coleta")
 
 ## Pedido deve imprir todos os detalhes da compra - pessoa, endereço e produtos
 print(pag.detalhes())

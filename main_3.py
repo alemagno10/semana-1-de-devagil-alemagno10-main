@@ -47,27 +47,26 @@ sabonete = Produto("0010342967", "Sabonete")
 pessoas = PessoaFisica.busca_nome('Carlos')
 if len(pessoas) > 0:
     pessoa = pessoas[0]  #Pega a primeira pessoa
+    print(pessoa)
 
 
 produtos = Produto.busca_nome("sabon")
-
 if len(produtos) > 0: 
     produto = produtos[0]
-
+    print()
 
 carrinho = Carrinho()
-carrinho.adicionar_item(sabonete)
+carrinho.adicionar_item(sabonete,2)
 
-pedido = Pedido()
+pedido = Pedido(pessoa1,carrinho)
 
 ends = pessoa.listar_enderecos()
-
-if len(ends > 0):
-    endereco = ends[0]
+if len(ends) > 0:
+    endereco = ends['casa']
 
 # Lembre-se de adicionar estes atributos ao endereço
 pedido.endereco_entrega = copy.deepcopy(endereco) 
-pedido.endereco_faturamento = copy.deepcopy(endreco)
+pedido.endereco_faturamento = copy.deepcopy(endereco)
 
 
 pag = Pagamento(pedido)
@@ -78,7 +77,7 @@ if pag.pagamento_aprovado:
 print("Pedido aguardando coleta")
 
 ## Pedido deve imprir todos os detalhes da compra - pessoa, endereço e produtos
-print(pedido)
+print(pedido.detalhes())
 
 
 
