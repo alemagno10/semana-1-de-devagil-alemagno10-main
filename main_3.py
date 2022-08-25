@@ -16,7 +16,7 @@ import copy
 
 # Caso de uso em que se busca uma pessoa e um produto
 # Cria uma pessoa 
-pessoa1 = PessoaFisica('Carlos', 'tiago@email.com', '524.222.452-6')
+pessoa1 = PessoaFisica('Carlos Magno', 'tiago@email.com', '524.222.452-6')
 print(pessoa1)
 
 # Cria  um endereço
@@ -47,8 +47,6 @@ sabonete = Produto("0010342967", "Sabonete")
 pessoas = PessoaFisica.busca_nome('Carlos')
 if len(pessoas) > 0:
     pessoa = pessoas[0]  #Pega a primeira pessoa
-    print(pessoa)
-
 
 produtos = Produto.busca_nome("sabon")
 if len(produtos) > 0: 
