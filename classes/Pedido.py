@@ -16,9 +16,11 @@ class Pedido:
     PAGO = 2
 
     def __init__(self,pessoa,carrinho):
+        self.endereco_entrega = None
+        self.endereco_faturamento = None
         self.pessoa = pessoa
         self.carrinho = carrinho
     
     def detalhes(self):
-        return f'Nome: {self.pessoa.nome}. Endereços: {list(self.pessoa.listar_enderecos().keys())}. Produtos: {self.carrinho.itens()}'
+        return f'Nome: {self.pessoa.nome}\nEndereços: {list(self.pessoa.listar_enderecos().keys())}\nProdutos: {self.carrinho.itens()}'
     

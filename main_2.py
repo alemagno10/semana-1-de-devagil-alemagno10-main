@@ -44,13 +44,13 @@ sabonete = Produto("0010342967", "Sabonete")
 carrinho = Carrinho()
 carrinho.adicionar_item(sabonete,2)
 
-pedido = Pedido()
+pedido = Pedido(pessoa1,carrinho)
 # Lembre-se de adicionar estes atributos ao endereço
 pedido.endereco_entrega = copy.deepcopy(end1) 
 pedido.endereco_faturamento = copy.deepcopy(end2)
 
 
-pag = Pagamento(pedido,pessoa1,carrinho)
+pag = Pagamento(pedido)
 pag.processa_pagamento()
 if pag.pagamento_aprovado:
     pedido.status = Pedido.PAGO 
@@ -58,7 +58,7 @@ if pag.pagamento_aprovado:
 print("\nPedido aguardando coleta")
 
 ## Pedido deve imprir todos os detalhes da compra - pessoa, endereço e produtos
-print(pag.detalhes())
+print(pedido.detalhes())
 
 
 
