@@ -17,7 +17,7 @@ import copy
 # Caso de uso em que criamos uma pessoa do zero, em seguida um produto, e  depois fechamos um pedido
 
 # Cria uma pessoa 
-pessoa1 = PessoaFisica('Carlos', 'tiago@email.com', '524.222.452-6')
+pessoa1 = PessoaFisica('Carlos Magno', 'tiago@email.com', '524.222.452-6')
 print(pessoa1)
 
 # Cria  um endereço
@@ -58,7 +58,7 @@ if pag.pagamento_aprovado:
 print("Pedido aguardando coleta")
 
 ## Pedido deve imprir todos os detalhes da compra - pessoa, endereço e produtos
-print(pag.detalhes)
+print(pag.detalhes())
 
 
 

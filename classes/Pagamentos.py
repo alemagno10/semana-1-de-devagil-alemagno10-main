@@ -12,5 +12,5 @@ class Pagamento:
         return True
     
     def detalhes(self):
-        return self.pessoa.nome + ' ' + self.pessoa.listar_enderecos + ' ' + self.carrinho.itens
+        return f'Nome: {self.pessoa.nome}. Endereços: {self.pessoa.listar_enderecos()}. Produtos: {self.carrinho.itens()}'
 
