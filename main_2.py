@@ -10,6 +10,7 @@ from classes.Endereco import Endereco
 from classes.Produto import Produto
 from classes.Carrinho import Carrinho
 from classes.Pedido import Pedido
+from classes.Pagamentos import Pagamento
 
 import copy
 
@@ -41,7 +42,7 @@ print(pessoa1.listar_enderecos())
 sabonete = Produto("0010342967", "Sabonete")
 
 carrinho = Carrinho()
-carrinho.adicionar_item(sabonete)
+carrinho.adicionar_item(sabonete,2)
 
 pedido = Pedido()
 # Lembre-se de adicionar estes atributos ao endereço
@@ -49,7 +50,7 @@ pedido.endereco_entrega = copy.deepcopy(end1)
 pedido.endereco_faturamento = copy.deepcopy(end2)
 
 
-pag = Pagamento(pedido)
+pag = Pagamento(pedido,pessoa1,carrinho)
 pag.processa_pagamento()
 if pag.pagamento_aprovado:
     pedido.status = Pedido.PAGO 
@@ -57,7 +58,7 @@ if pag.pagamento_aprovado:
 print("Pedido aguardando coleta")
 
 ## Pedido deve imprir todos os detalhes da compra - pessoa, endereço e produtos
-print(pedido)
+print(pag.detalhes)
 
 
 

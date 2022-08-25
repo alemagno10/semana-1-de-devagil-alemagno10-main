@@ -11,4 +11,11 @@
 class Produto:
 
     def __init__(self, id='', nome=''):
-        pass
+        self.id = id
+        self.nome = nome
+
+    def __str__(self):
+        self.nome 
+        
+    def get_id(self):
+        return self.id

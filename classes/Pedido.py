@@ -11,11 +11,6 @@ from classes.PessoaFisica import PessoaFisica
 from classes.Carrinho import Carrinho
 import re
 
-
-
-
 class Pedido:
     EM_ABERTO = 1
     PAGO = 2
-    pass
-    
